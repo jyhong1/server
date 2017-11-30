@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>FEEDBACK</title>
+    </head>
+    <body>
+        {% for post in posts %}
+            {{ post.basepost }}
+
+            <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">ADD</a>
+
+            <h1><a href="{% url 'feedback_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a></h1>
+        {% endfor %}
+
+    </body>
+</html>
